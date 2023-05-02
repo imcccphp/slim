@@ -1,0 +1,19 @@
+{
+    "name": "imccc/slim",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Imccc\\Slim\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "sam",
+            "email": "sam@imccc.cc"
+        }
+    ],
+    "require": {
+        "noahbuscher/macaw": "dev-master"
+    }
+}
