@@ -12,8 +12,5 @@
             "name": "sam",
             "email": "sam@imccc.cc"
         }
-    ],
-    "require": {
-        "noahbuscher/macaw": "dev-master"
-    }
+    ]
 }
