@@ -1,11 +1,13 @@
 <?php
+namespace Imccc\Slim;
+
+use \Imccc\Slim\Core\Slim;
 
 define('SLIM_VERSION', '1.0.0');
 define('SLIM_START_TIME', microtime(true));
 define('SLIM_START_MEM', memory_get_usage());
 define('EXT', '.php');
-define('DS', DIRECTORY_SEPARATOR);
-
+defined('DS') || define('DS', DIRECTORY_SEPARATOR);
 defined('SLIM_PATH') || define('SLIM_PATH', __DIR__ . DS);
 
 define('CORE_PATH', SLIM_PATH . 'Core' . DS);
@@ -20,7 +22,7 @@ defined('RUNTIME_PATH') || define('RUNTIME_PATH', ROOT_PATH . 'runtime' . DS);
 defined('LOG_PATH') || define('LOG_PATH', RUNTIME_PATH . 'log' . DS);
 defined('CACHE_PATH') || define('CACHE_PATH', RUNTIME_PATH . 'cache' . DS);
 defined('TEMP_PATH') || define('TEMP_PATH', RUNTIME_PATH . 'temp' . DS);
-defined('CONF_PATH') || define('CONF_PATH', APP_PATH); // 配置文件目录
+defined('CONF_PATH') || define('CONF_PATH', APP_PATH . 'config' . DS); // 配置文件目录
 defined('CONF_EXT') || define('CONF_EXT', EXT); // 配置文件后缀
 defined('ENV_PREFIX') || define('ENV_PREFIX', 'PHP_'); // 环境变量的配置前缀
 
@@ -28,6 +30,4 @@ defined('ENV_PREFIX') || define('ENV_PREFIX', 'PHP_'); // 环境变量的配置�
 define('IS_CLI', PHP_SAPI == 'cli' ? true : false);
 define('IS_WIN', strpos(PHP_OS, 'WIN') !== false);
 
-include CORE_PATH . 'Slim.php';
-
-new \Imccc\Slim\Core\Slim();
+new Slim;
